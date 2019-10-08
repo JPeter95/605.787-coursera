@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" ng-app="LunchCheckApp">
+
+<head>
+  <meta charset="utf-8">
+  <title>Lunch Checker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles/bootstrap.min.css">
+  <style>
+    .message {
+      font-size: 1.3em;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<script type="text/javascript" src="angular.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+
+<body>
+  <div class="container" ng-controller="LunchCheckController">
+    <h1>Lunch Checker</h1>
+
+    <div class="form-group">
+      <input id="lunch-menu" type="text" placeholder="list comma separated dishes you usually have for lunch" class="form-control"
+        ng-style="inputStyle" ng-model="userInput">
+    </div>
+    <div class="form-group">
+      <button class="btn btn-default" ng-click="checkInput()">Check If Too Much</button>
+    </div>
+    <div class="form-group message" ng-style="messageStyle">
+      <!-- Your message can go here. -->
+      {{ message }}
+    </div>
+    <h3>
+      <b>Note:</b> "item 1, item2, ,item3" is not counting an 'empty' item towards the count of how many items there are in
+      the list
+    </h3>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<div class="container">
+  <h2 class="text-center">My Info</h2>
+
+  <div ng-show="infoCtrl.member">
+    <h4>
+      <span><b>First Name:</b> {{ infoCtrl.member.firstname }}</span>
+    </h4>
+    <h4>
+      <span><b>Last Name:</b> {{ infoCtrl.member.lastname }}</span>
+    </h4>
+    <h4>
+      <span><b>Email:</b> {{ infoCtrl.member.email }}</span>
+    </h4>
+    <h4>
+      <span><b>Phone:</b> {{ infoCtrl.member.phone }}</span>
+    </h4>
+    <div>
+      <h4><b>Favorite Item:</b></h4>
+
+      <img class="img-responsive" width="250" height="150" 
+        ng-src="https://jpeter95.herokuapp.com/images/{{infoCtrl.memberItem.short_name}}.jpg"
+        alt="{{infoCtrl.memberItem.name}}">
+      </img>
+
+      <h5><b>Title:</b> {{ infoCtrl.memberItem.name }}</h5>
+      <h6><b>Description:</b> {{ infoCtrl.memberItem.description }}</h6>
+    </div>
+  </div>
+
+  <div ng-hide="infoCtrl.member">
+    <h4>Not signed up yet.</h4>
+    <a ui-sref="public.signup">Sign up Now!</a>
+  </div>
+</div>
